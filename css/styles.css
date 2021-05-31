@@ -13,6 +13,8 @@
   --box-people-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   --border-line: #ececec;
+  --hero-background: #c4c4c4;
+  --bgr-overlay: rgba(47, 48, 58, 0.4);
 }
 
 /*Lists global settings*/
@@ -60,7 +62,26 @@ section {
 }
 .hero {
   padding: 0;
-  background: var(--footer-color);
+
+  /*оформление многослойного ГЕРОЯ*/
+  min-width: 1600px;
+  background: var(--hero-background);
+  background-image: linear-gradient(
+      to right,
+      var(--bgr-overlay),
+      var(--bgr-overlay)
+    ),
+    url(/images/background-img-hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1600px;
+
+  /*background-color: var(--background-grey);
+
+  background-image: url(/images/background-img-hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1600px 600px;*/
 }
 
 /*Глобальный стиль для всего сайта*/
@@ -69,6 +90,7 @@ body {
   font-family: Roboto, Geneva, normal;
   color: var(--main-text-color);
 }
+
 /*Summary class*/
 .container {
   width: 1230px;
@@ -106,6 +128,7 @@ section.site-header {
 .header-flex {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .menu-navigation {
   display: flex;
@@ -113,14 +136,24 @@ section.site-header {
 .menu-nav-conteiner {
   display: flex;
   margin-left: 93px;
+  align-items: center;
 }
 .menu-nav-conteiner .item:not(:last-child) {
   margin-right: 50px;
 }
 .menu-nav-conteiner.second {
-  margin-left: 331px;
+  margin-left: 305px;
+  align-items: center;
 }
+.menu-nav-contacts::before {
+  content: " ";
+  display: inline-flex;
 
+  margin-right: 10px;
+  height: 12px;
+  width: 16px;
+  background-image: url(/images/envelope.svg);
+}
 .menu-nav-link {
   font-weight: 500;
   font-size: 14px;
@@ -275,8 +308,8 @@ address {
 /*Герой*/
 
 .hero .container {
-  padding-top: 195px;
-  padding-bottom: 285px;
+  padding-top: 200px;
+  padding-bottom: 200px;
   text-align: center;
 }
 
